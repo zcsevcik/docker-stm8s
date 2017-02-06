@@ -6,8 +6,8 @@ RUN apk --update --no-cache upgrade && \
     apk --update --no-cache add --virtual build-dependencies \
     build-base flex bison boost-dev texinfo unzip openssl ca-certificates
 
-ADD stsw-stm8069.zip /tmp/stsw-stm8069.zip
-RUN unzip /tmp/stsw-stm8069.zip -d /opt && \
+RUN wget -O /tmp/stsw-stm8069.zip "https://github.com/zcsevcik/docker-stm8s/raw/master/stsw-stm8069.zip" && \
+    unzip /tmp/stsw-stm8069.zip -d /opt && \
     wget -O /tmp/STM8_SPL_v2.2.0_SDCC.patch "https://github.com/gicking/SPL_2.2.0_SDCC_patch/raw/master/STM8_SPL_v2.2.0_SDCC.patch" && \
     cd /opt/STM8S_StdPeriph_Lib && \
     patch -p1 </tmp/STM8_SPL_v2.2.0_SDCC.patch && \
