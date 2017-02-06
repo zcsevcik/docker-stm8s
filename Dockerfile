@@ -18,7 +18,7 @@ RUN wget -O /tmp/stx-btree-0.9.tar.bz2 "http://panthema.net/2007/stx-btree/stx-b
     cd /tmp/stx-btree-0.9 && \
     ./configure && \
     make -j && \
-    make install && \
+    make install-strip && \
     rm -fr /tmp/stx-btree-0.9.tar.bz2 /tmp/stx-btree-0.9
 
 RUN wget -O /tmp/sdcc-3.6.0.tar.bz2 "https://sourceforge.net/projects/sdcc/files/sdcc/3.6.0/sdcc-src-3.6.0.tar.bz2/download" && \
@@ -39,7 +39,7 @@ RUN wget -O /tmp/sdcc-3.6.0.tar.bz2 "https://sourceforge.net/projects/sdcc/files
       --disable-hc08-port \
       --disable-s08-port && \
     make -j && \
-    make strip-install && \
+    make install-strip && \
     rm -fr /tmp/sdcc-3.6.0 /tmp/sdcc-3.6.0.tar.bz2
 
 RUN apk del build-dependencies
