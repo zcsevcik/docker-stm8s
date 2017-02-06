@@ -9,7 +9,7 @@ RUN apk --update --no-cache upgrade && \
     wget -O /tmp/stsw-stm8069.zip "https://github.com/zcsevcik/docker-stm8s/raw/master/stsw-stm8069.zip" && \
     wget -O /tmp/STM8_SPL_v2.2.0_SDCC.patch "https://github.com/gicking/SPL_2.2.0_SDCC_patch/raw/master/STM8_SPL_v2.2.0_SDCC.patch" && \
     unzip /tmp/stsw-stm8069.zip -d /opt && \
-    rm -fr /tmp/stsw-stm8069.zip \
+    rm -fr /tmp/stsw-stm8069.zip && \
     cd /opt/STM8S_StdPeriph_Lib && \
     patch -p1 </tmp/STM8_SPL_v2.2.0_SDCC.patch && \
     rm -fr /tmp/STM8_SPL_v2.2.0_SDCC.patch && \
