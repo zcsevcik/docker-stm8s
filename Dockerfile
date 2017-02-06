@@ -1,5 +1,5 @@
 FROM frolvlad/alpine-glibc:latest
-MAINTAINER Radek Ševčík <zcsevcik@gmail.com>
+LABEL maintainer "zcsevcik@gmail.com"
 
 RUN apk --update --no-cache upgrade && \
     apk --update --no-cache add make boost && \
