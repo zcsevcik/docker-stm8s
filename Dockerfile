@@ -4,7 +4,7 @@ MAINTAINER Radek Ševčík <zcsevcik@gmail.com>
 RUN apk --update --no-cache upgrade && \
     apk --update --no-cache add make boost && \
     apk --update --no-cache add --virtual build-dependencies \
-    build-base flex bison boost-dev unzip openssl ca-certificates
+    build-base flex bison boost-dev texinfo unzip openssl ca-certificates
 
 ADD stsw-stm8069.zip /tmp/stsw-stm8069.zip
 RUN unzip /tmp/stsw-stm8069.zip -d /opt && \
