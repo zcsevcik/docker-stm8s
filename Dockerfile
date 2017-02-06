@@ -39,7 +39,7 @@ RUN wget -O /tmp/sdcc-3.6.0.tar.bz2 "https://sourceforge.net/projects/sdcc/files
       --disable-hc08-port \
       --disable-s08-port && \
     make -j && \
-    make install-strip && \
+    make install && \
     rm -fr /tmp/sdcc-3.6.0 /tmp/sdcc-3.6.0.tar.bz2
 
 RUN apk del build-dependencies
