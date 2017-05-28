@@ -7,12 +7,14 @@ RUN apk --update --no-cache upgrade && \
     build-base flex bison boost-dev texinfo unzip openssl ca-certificates && \
 
     wget -O /tmp/stsw-stm8069.zip "https://github.com/zcsevcik/docker-stm8s/raw/master/stsw-stm8069.zip" && \
-    wget -O /tmp/STM8_SPL_v2.2.0_SDCC.patch "https://github.com/gicking/SPL_2.2.0_SDCC_patch/raw/master/STM8_SPL_v2.2.0_SDCC.patch" && \
+    wget -O /tmp/SPL_2.2.0_SDCC_patch.zip "https://github.com/zcsevcik/docker-stm8s/raw/master/SPL_2.2.0_SDCC_patch-master.zip" && \
     unzip /tmp/stsw-stm8069.zip -d /opt && \
     rm -fr /tmp/stsw-stm8069.zip && \
+    unzip /tmp/SPL_2.2.0_SDCC_patch.zip -d /opt && \
+    rm -fr /tmp/SPL_2.2.0_SDCC_patch.zip && \
     cd /opt/STM8S_StdPeriph_Lib && \
-    patch -p1 </tmp/STM8_SPL_v2.2.0_SDCC.patch && \
-    rm -fr /tmp/STM8_SPL_v2.2.0_SDCC.patch && \
+    patch -p1 </opt/SPL_2.2.0_SDCC_patch-master/STM8_SPL_v2.2.0_SDCC.patch && \
+    rm -fr /opt/SPL_2.2.0_SDCC_patch-master && \
 
     wget -O /tmp/stx-btree-0.9.tar.bz2 "http://panthema.net/2007/stx-btree/stx-btree-0.9.tar.bz2" && \
     tar xvf /tmp/stx-btree-0.9.tar.bz2 -C /tmp && \
