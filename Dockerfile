@@ -4,7 +4,7 @@ LABEL maintainer "zcsevcik@gmail.com"
 RUN apk --update --no-cache upgrade && \
     apk --update --no-cache add make boost && \
     apk --update --no-cache add --virtual build-dependencies \
-    build-base flex bison boost-dev texinfo unzip openssl ca-certificates && \
+    build-base flex bison boost-dev texinfo unzip openssl ca-certificates tar && \
 
     wget -O /tmp/stsw-stm8069.zip "https://github.com/zcsevcik/docker-stm8s/raw/master/stsw-stm8069.zip" && \
     wget -O /tmp/SPL_2.2.0_SDCC_patch.zip "https://github.com/zcsevcik/docker-stm8s/raw/master/SPL_2.2.0_SDCC_patch-master.zip" && \
