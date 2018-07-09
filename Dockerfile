@@ -28,7 +28,7 @@ RUN apk --update --no-cache upgrade && \
     wget -O /tmp/sdcc-3.7.0.tar.bz2 "https://sourceforge.net/projects/sdcc/files/sdcc/3.7.0/sdcc-src-3.7.0.tar.bz2/download" && \
     tar xvf /tmp/sdcc-3.7.0.tar.bz2 -C /tmp && \
     rm -fr /tmp/sdcc-3.7.0.tar.bz2 && \
-    cd /tmp/sdcc-3.7.0 && \
+    cd /tmp/sdcc && \
     ./configure \
       --disable-mcs51-port \
       --disable-z80-port \
@@ -45,6 +45,6 @@ RUN apk --update --no-cache upgrade && \
       --disable-s08-port && \
     make -j && \
     make install && \
-    rm -fr /tmp/sdcc-3.7.0 && \
+    rm -fr /tmp/sdcc && \
 
     apk del build-dependencies
